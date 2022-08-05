@@ -27,18 +27,20 @@ main {
 }
 
 .pokemon_image {
+  width: 16%;
   position: absolute;
-  height: 12%;
-  left: 20%;
+  height: 16%;
+  left: 17%;
   bottom: 45%;
-  transform: translate(30%,0%);
+  transform: translate(20%,5%);
 }
 
 .pokemon_data_number {
+  width: 10%;
   position: absolute;
-  left: 18%;
+  left: 14%;
   bottom: 19%;
-  transform: translate(42%,5%);
+  transform: translate(35%,10%);
   color: rgb(66, 65, 65);
   font-weight: 700;
   font-size: clamp(5px,4vw, 25px);
@@ -47,14 +49,16 @@ main {
 
 
 .pokemon_data_name {
+  width: 29%;
   position: absolute;
-  left: 54%;
-  bottom: 57%;
-  transform: translate(50%,0%);
+  left: 44%;
+  bottom: 58%;
+  transform: translate(60%,0%);
   color: rgb(75, 73, 73);
   font-weight: 600;
   text-transform: capitalize;
-  font-size: clamp(8px,5vw, 30px);
+  font-size: clamp(8px,4vw, 25px);
+  text-align: center;
   
  }
 
