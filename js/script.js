@@ -25,22 +25,28 @@ const renderPokemon = async (pokemon) => {
     pokemomName.innerHTML = 'Loading';
     pokemomNumber.innerHTML = '...';
   const data = await fetchPokemon(pokemon);
-  
   if(data){
-    pokemomName.innerHTML = data.name;
-    pokemomNumber.innerHTML = data.id;
-    pokemomImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default']
-    input.value = '';
-    searchPokemon = data.id;
-  }else{
+    if(data.id <= 649){
+      pokemomName.innerHTML = data.name;
+      pokemomNumber.innerHTML = data.id;
+      pokemomImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default']
+      input.value = '';
+      searchPokemon = data.id;
+    } else{
+      pokemomName.innerHTML = data.name;
+      pokemomNumber.innerHTML = data.id;
+      pokemomImage.src = data['sprites']['front_default']
+      input.value = '';
+      searchPokemon = data.id;
+    }
+  } else {
     pokemomName.innerHTML = 'Not found!';
-    pokemomNumber.innerHTML = '000';
-    pokemomImage.src ="https://c.tenor.com/fCvghb3z3MEAAAAi/pokemon-pikachu.gif"
-    input.value = '';
-    searchPokemon = 0;
+      pokemomNumber.innerHTML = '000';
+      pokemomImage.src ="https://c.tenor.com/fCvghb3z3MEAAAAi/pokemon-pikachu.gif"
+      input.value = '';
+      searchPokemon = 0;
   }
-
-};
+  };
 
 form.addEventListener('submit',(event)=>{
   event.preventDefault();
