@@ -86,33 +86,4 @@ main {
   padding-left: 5%;
  }
 
- .buttons {
-  
-  width: 14%;
-  display: flex;
-  background-color: none;
-  position: absolute;
-  bottom: 29.1%;
-  left: 52.3%;
-  transform: translate(50%,0%);
-  
-  
- }
-
- .button {
-  width: 42%;
-  padding: 16%;
-  border: none;
-  font-size: clamp(1px,2vw, 10px);
-  background-color: rgba(97, 12, 154, 0.0);
-  font-weight: 600;
-  
- }
-
  
-
- .button:active {
-  background-color:rgba(240, 227, 227, 0.9);
-  border: 1px solid rgba(122, 122, 122, 0.9);
-  border-radius: 3px;
- }

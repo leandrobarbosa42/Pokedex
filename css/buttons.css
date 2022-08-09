@@ -1,0 +1,53 @@
+.buttons {
+  width: 14%;
+  display: flex;
+  background-color: none;
+  position: absolute;
+  bottom: 29.1%;
+  left: 52.3%;
+  transform: translate(50%,0%);
+ }
+
+ .button {
+  width: 42%;
+  padding: 16%;
+  border: none;
+  font-size: clamp(1px,2vw, 10px);
+  background-color: rgba(97, 12, 154, 0.0);
+  font-weight: 600;
+ }
+
+ .button:active {
+  background-color:rgba(240, 227, 227, 0.9);
+  border: 1px solid rgba(122, 122, 122, 0.9);
+  border-radius: 3px;
+ }
+
+ .butttons-arrow {
+  background-color: rgba( 20, 25, 15, 0.2);
+  position: absolute;
+  width: 10%;
+  height: 12%;
+  left: 33.1%;
+  bottom: 16.8%;
+  display: inline;
+  transform: rotate(45deg);
+ }
+
+ .button-seta {
+  width: 45%;
+  height: 45%;
+  border-radius: 8px;
+  }
+  .button-seta:active {
+    background: none;
+  }
+
+ .btn-rigth{
+  background-color: blue; }
+
+ .btn-left{
+  background-color: red;}
+
+ .btn-up{
+  background-color: green;}
