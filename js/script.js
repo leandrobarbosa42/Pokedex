@@ -1,3 +1,5 @@
+ 
+
 const pokemomName = document.querySelector('.pokemon_name');
 const pokemomNumber = document.querySelector('.pokemon_number');
 const pokemomImage = document.querySelector('.pokemon_image');
@@ -7,6 +9,7 @@ const input = document.querySelector('.input_search');
 
 const btnPrev = document.querySelector('.btn-prev');
 const btnNext = document.querySelector('.btn-next');
+const btnRandom = document.querySelector('.btn-random');
 
 let searchPokemon = 1;
 
@@ -48,6 +51,13 @@ const renderPokemon = async (pokemon) => {
   }
   };
 
+  function getRandomInt(min,max){
+    min = Math.ceil(min);
+    max = Math.floor(max);
+  
+    return Math.floor(Math.random()*(max-min)+min);
+  };
+
 form.addEventListener('submit',(event)=>{
   event.preventDefault();
   renderPokemon(input.value.toLowerCase());
@@ -64,5 +74,12 @@ btnNext.addEventListener('click',()=>{
   searchPokemon+=1
   renderPokemon(searchPokemon)
     });
+
+
+
+btnRandom.addEventListener('click',()=>{
+  aleatorio = getRandomInt(1,899);
+  renderPokemon(aleatorio);
+    }) 
 
 renderPokemon(searchPokemon);
