@@ -24,7 +24,7 @@
  }
 
  .butttons-arrow {
-  background-color: rgba( 20, 25, 15, 0.5);
+  background-color: rgba( 20, 25, 15, 0.0);
   position: absolute;
   width: 12%;
   height: 14.5%;
@@ -67,38 +67,39 @@
   width: 44%;
   height: 44%;
   border: none;
+  border-radius: 25%;
+  background-color: rgba( 20, 25, 15, 0.0);
   }
   .button-seta:active {
-    background: none;
+    background: rgba( 20, 25, 15, 0.4);
   }
 
  .btn-rigth{
-  background-color: blue;
-  width: 40%;
-  height: 95%;
-  left: 60%;
+  width: 30%;
+  height: 93%;
+  left: 63%;
+  bottom: 10%;
 }
 
  .btn-left{
-  background-color: red;
-  width: 40%;
-  height: 95%;
+  width: 30%;
+  height: 93%;
   left: 0%;
+  bottom: 10%;
 }
 
  .btn-up{
-  background-color: green;
-  width: 40%;
+  width: 25%;
   height: 95%;
-  left: 26%;
+  left: 35%;
 }
 
 
 .btn-down{
-  background-color: rgb(192, 181, 62);
-  width: 40%;
-  height: 95%;
-  left: 26%;
+  width: 24%;
+  height: 93%;
+  left: 34%;
+  transform: rotate(6deg);
 }
 
   .button-random{

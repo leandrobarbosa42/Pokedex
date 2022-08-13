@@ -11,6 +11,12 @@ const btnPrev = document.querySelector('.btn-prev');
 const btnNext = document.querySelector('.btn-next');
 const btnRandom = document.querySelector('.btn-random');
 
+const btnUp = document.querySelector('.btn-up');
+const btnDown = document.querySelector('.btn-down');
+const btnLeft = document.querySelector('.btn-left');
+const btnRigth = document.querySelector('.btn-rigth');
+
+
 let searchPokemon = 1;
 
 const fetchPokemon = async (pokemon) => {
@@ -80,6 +86,9 @@ btnNext.addEventListener('click',()=>{
 btnRandom.addEventListener('click',()=>{
   aleatorio = getRandomInt(1,899);
   renderPokemon(aleatorio);
-    }) 
+    });
+
+
+
 
 renderPokemon(searchPokemon);
