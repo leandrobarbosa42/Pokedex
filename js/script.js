@@ -18,6 +18,7 @@ const btnRigth = document.querySelector('.btn-rigth');
 
 
 let searchPokemon = 1;
+let position = ['front_default'];
 
 const fetchPokemon = async (pokemon) => {
   
@@ -30,7 +31,7 @@ const fetchPokemon = async (pokemon) => {
   
 }
 
-const renderPokemon = async (pokemon) => {
+const renderPokemon = async (pokemon, position) => {
     pokemomName.innerHTML = 'Loading';
     pokemomNumber.innerHTML = '...';
   const data = await fetchPokemon(pokemon);
@@ -38,23 +39,25 @@ const renderPokemon = async (pokemon) => {
     if(data.id <= 649){
       pokemomName.innerHTML = data.name;
       pokemomNumber.innerHTML = data.id;
-      pokemomImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default']
+      pokemomImage.src = data['sprites']['versions']['generation-v']['black-white']['animated'][position]
       input.value = '';
       searchPokemon = data.id;
     } else{
       pokemomName.innerHTML = data.name;
       pokemomNumber.innerHTML = data.id;
-      pokemomImage.src = data['sprites']['front_default']
+      pokemomImage.src = data['sprites'][position]
       input.value = '';
       searchPokemon = data.id;
     }
   } else {
     pokemomName.innerHTML = 'Not found!';
-      pokemomNumber.innerHTML = '000';
-      pokemomImage.src ="https://c.tenor.com/fCvghb3z3MEAAAAi/pokemon-pikachu.gif"
-      input.value = '';
-      searchPokemon = 0;
+    pokemomNumber.innerHTML = '000';
+    pokemomImage.src ="https://c.tenor.com/fCvghb3z3MEAAAAi/pokemon-pikachu.gif"
+    input.value = '';
+    searchPokemon = 0;
   }
+
+
   };
 
   function getRandomInt(min,max){
@@ -66,29 +69,57 @@ const renderPokemon = async (pokemon) => {
 
 form.addEventListener('submit',(event)=>{
   event.preventDefault();
-  renderPokemon(input.value.toLowerCase());
+  position='front_default';
+  renderPokemon(input.value.toLowerCase(), position);
   });
 
 btnPrev.addEventListener('click',()=>{
    if(searchPokemon > 1){
     searchPokemon-=1
-    renderPokemon(searchPokemon)
+    position='front_default'
+    renderPokemon(searchPokemon, position)
    }
     
   });
 btnNext.addEventListener('click',()=>{
   searchPokemon+=1
-  renderPokemon(searchPokemon)
+  position='front_default'
+  renderPokemon(searchPokemon, position)
     });
 
 
 
 btnRandom.addEventListener('click',()=>{
   aleatorio = getRandomInt(1,899);
-  renderPokemon(aleatorio);
+  position='front_default';
+  renderPokemon(aleatorio, position);
     });
 
+btnNext.addEventListener('click',()=>{
+  searchPokemon+=1
+  renderPokemon(searchPokemon, position)
+});
+
+btnLeft.addEventListener('click',()=>{
+  position='back_default' 
+  renderPokemon(searchPokemon, position)
+});
+
+btnRigth.addEventListener('click',()=>{
+  position='front_default' 
+  renderPokemon(searchPokemon, position)
+});
+
+btnUp.addEventListener('click',()=>{
+  position='front_shiny' 
+  renderPokemon(searchPokemon, position)
+});
+
+btnDown.addEventListener('click',()=>{
+  position='back_shiny' 
+  renderPokemon(searchPokemon, position)
+});
 
 
 
-renderPokemon(searchPokemon);
+renderPokemon(searchPokemon,position);
