@@ -127,27 +127,6 @@
   }
 
 
-  .button-light{
-    background-color: rgba(240, 227, 227, 0.0);
-    position: absolute;
-    width: 4.4%;
-    height: 5.3%;
-    left: 86.1%;
-    bottom: 27.6%;
-  }
-
-  .btn-light {
+  
     
-    background: none;
-    color: none;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: none;
-    
-  }
-
-  .btn-light:active {
-    background: rgb(234, 234, 37);
-    
-  }
+  
